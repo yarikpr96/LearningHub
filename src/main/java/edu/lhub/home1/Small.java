@@ -5,4 +5,7 @@ package edu.lhub.home1;
  */
 public interface Small {
     void  easyMove() ;
+    static void   eMove(){
+        System.out.println("easy");
+    }
 }

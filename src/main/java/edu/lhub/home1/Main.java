@@ -2,13 +2,17 @@ package edu.lhub.home1;
 
 import edu.lhub.home1.entity.Kettle;
 import edu.lhub.home1.entity.Multicookings;
+import edu.lhub.home1.entity.Refrigerator;
 import edu.lhub.home1.entity.Squeezer;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static edu.lhub.home1.Small.eMove;
+
 
 public class Main {
+
     public static void main(String[] args) {
         Kettle kettle = new Kettle();
         kettle.setBrand(new Brand("LG"));
@@ -34,7 +38,10 @@ public class Main {
         multicookings.setDescription("Good");
         multicookings.doWORK();
         multicookings.electricalOff();
+
         System.out.println(multicookings);
+        System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++");
+        eMove();
         System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++");
 
         List<KitchenAppliances> kitchenAppliancesList = new ArrayList<>();
@@ -51,6 +58,14 @@ public class Main {
         System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++");
 
         kitchenAppliancesList.stream().filter(kitchenAppliances -> kitchenAppliances.getBrand().equals(new Brand("LG"))).forEach(System.out::println);
+
+        System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++");
+        Refrigerator refrigerator = new Refrigerator();
+        refrigerator.setBrand(new Brand("Moulinex"));
+        refrigerator.setPrice(1600);
+        refrigerator.setDescription("Good");
+        refrigerator.hardMove(10);
+        System.out.println(refrigerator);
 
     }
 }

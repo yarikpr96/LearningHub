@@ -28,4 +28,5 @@ public class Multicookings extends KitchenAppliances implements Small, Electrica
     public void easyMove() {
         System.out.println("Moved");
     }
+
 }
